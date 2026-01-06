@@ -22,4 +22,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: jucandia/python_app:${env.COMMIT_ID::6}
+          tags: jucandia/python_app:${GITHUB_SHA::6}
