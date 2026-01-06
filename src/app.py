@@ -31,7 +31,7 @@ def info():
     return jsonify({
     	'time': datetime.datetime.now().strftime("%I:%M:%S%p  on %B %d, %Y"),
     	'hostname': socket.gethostname(),
-        'message': 'ESTE ES UN NUEVO MENSAJE DE DETALLES  1 rgergereredffdfffdfdfgggggggggdfdfdfdgerg',
+        'message': 'ESTE ES UN NUEVO MENSAJE DE DETALLES  1 rjjjjjjjjjjjjj',
     })
 
 if __name__ == '__main__':
