@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  docker:
+  ci:
     runs-on: ubuntu-latest
     steps:
 
@@ -29,3 +29,14 @@ jobs:
         with:
           push: true
           tags: jucandia/python_app:${{ env.COMMIT_ID }}
+  cd:
+    needs: ci
+    runs-on: self-hosted
+    steps:
+
+      - name: Argocd app sync
+        shell: bash
+        run: |
+          argocd login argocd-server.argocd:8080 --username admin --password ${{ secrets.ARGOCD_PASSWORD }} --insecure --grpc-web
+          y
+          argocd app sync python-aa
