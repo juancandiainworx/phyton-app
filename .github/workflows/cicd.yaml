@@ -29,10 +29,19 @@ jobs:
         with:
           push: true
           tags: jucandia/python_app:${{ env.COMMIT_ID }}
+
+    outputs:
+      commit_id: ${{ env.COMMIT_ID }}
+
   cd:
     needs: ci
     runs-on: self-hosted
     steps:
+
+      - name: Modify Values file
+        run: |
+          echo ${{ needs.ci.outputs.commit_id }}
+
 
       - name: Install ArgoCD CLI
         run: |
