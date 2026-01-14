@@ -15,7 +15,7 @@ def info():
     return jsonify({
     	'time': datetime.datetime.now().strftime("%I:%M:%S%p  on %B %d, %Y"),
     	'hostname': socket.gethostname(),
-        'message': 'You are doing great, little human!! <3',
+        'message': 'You are doing great, little human, VCwewefwe             ffew <3',
         'deployed_on': 'kubernetes'
     })
 
@@ -31,7 +31,7 @@ def info():
     return jsonify({
     	'time': datetime.datetime.now().strftime("%I:%M:%S%p  on %B %d, %Y"),
     	'hostname': socket.gethostname(),
-        'message': 'ESTE ES UN NUEVO MENSAJE DE DETALLES   PARA EL USUARIO',
+        'message': 'ESTE ES UN NUEVO MENSAJE DE DETALLES   PARA EL USUARIO y nuevos cambios',
     })
 
 if __name__ == '__main__':
