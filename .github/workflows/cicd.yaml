@@ -38,6 +38,18 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
+
+      # 🔹 STEP NUEVO: instalar yq (igual que en el pod)
+      - name: Install yq (no root)
+        shell: bash
+        run: |
+          mkdir -p ~/.local/bin
+          curl -L https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 \
+            -o ~/.local/bin/yq
+          chmod +x ~/.local/bin/yq
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          yq --version
+
       - name: Modify Values file
         shell: bash
         run: |
